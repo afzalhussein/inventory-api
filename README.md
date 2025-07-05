@@ -1,39 +1,124 @@
-# inventory-api
-Inventory Management API built with Django, DRF, PostgreSQL, JWT, RBAC, and pytest.
+# Inventory Management API
 
-```text
-inventory_api/
-├── config/                      # Django project settings
-│   ├── __init__.py
-│   ├── asgi.py
+A Django REST API for tracking and managing assets.
+
+## Features
+
+- JWT authentication
+- Custom user model with roles (admin, manager, viewer)
+- Asset management with status tracking
+- DRF and drf-spectacular for API schema/docs
+
+## Setup
+
+### 1. Clone the repository
+
+```sh
+git clone <your-repo-url>
+cd inventory-api
+```
+
+### 2. Create and activate a virtual environment
+
+```sh
+python -m venv env
+env\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+### 4. Install PostgreSQL and create the database
+
+- Ensure PostgreSQL is running.
+- Create a database named `inventory_db`:
+
+```sh
+psql -U postgres
+CREATE DATABASE inventory_db;
+\q
+```
+
+### 5. Configure settings (if needed)
+
+Edit `config/settings.py` for your database credentials if needed.
+
+### 6. Run migrations
+
+```sh
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 7. Create a superuser
+
+```sh
+python manage.py createsuperuser
+```
+
+### 8. Run the development server
+
+```sh
+python manage.py runserver
+```
+
+### 9. Run tests
+
+```sh
+pytest
+```
+
+## Requirements
+
+Add the following to your `requirements.txt`:
+
+```
+Django>=5.2,<6.0
+djangorestframework
+drf-spectacular
+djangorestframework-simplejwt
+django-filter
+psycopg2-binary
+pytest
+pytest-django
+```
+
+## API Endpoints
+
+- **Assets:** `/api/assets/`
+- **Authentication:** `/api/token/`, `/api/token/refresh/`
+- **API Docs:** `/api/schema/`, `/api/docs/`
+
+## Notes
+
+- Make sure `django-filter` is installed:  
+  `pip install django-filter`
+- If you use pytest, ensure `pytest.ini` contains:
+  ```
+  [pytest]
+  DJANGO_SETTINGS_MODULE = config.settings
+  ```
+
+## Project Structure
+
+```
+inventory-api/
+├── assets/
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+├── users/
+│   ├── models.py
+│   └── ...
+├── config/
 │   ├── settings.py
 │   ├── urls.py
-│   └── wsgi.py
-│
-├── assets/                      # Asset tracking app
-│   ├── migrations/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── serializers.py
-│   ├── views.py
-│   ├── permissions.py
-│   └── filters.py
-│
-├── users/                       # Custom User model
-│   ├── migrations/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── models.py
-│   └── apps.py
-│
-├── tests/                       # Pytest tests
-│   ├── __init__.py
-│   ├── conftest.py
+│   └── ...
+├── tests/
 │   └── test_assets.py
-│
-├── manage.py
 ├── requirements.txt
 └── README.md
 ```
