@@ -14,7 +14,7 @@ A Django REST API for tracking and managing assets.
 ### 1. Clone the repository
 
 ```sh
-git clone <your-repo-url>
+git clone [inventory-api](https://github.com/afzalhussein/inventory-api)
 cd inventory-api
 ```
 
