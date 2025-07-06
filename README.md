@@ -13,6 +13,9 @@ A Django REST API for tracking and managing assets.
 ---
 ## Add Group (showing **users**)
 ![image](https://github.com/user-attachments/assets/3c27a9af-993f-48f7-a94d-b032b74b692a)
+---
+## Doc (**/api/docs/#/**)
+![image](https://github.com/user-attachments/assets/02105af1-4a7d-486f-9871-c54606b832c1)
 
 ## Features
 
