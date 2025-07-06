@@ -1,6 +1,18 @@
 # Inventory Management API
 
 A Django REST API for tracking and managing assets.
+---
+## Login
+![image](https://github.com/user-attachments/assets/917e3c5c-7338-4a30-9a2f-409033a79da3)
+---
+## Admin page
+![image](https://github.com/user-attachments/assets/fcd80758-8a2e-40e4-ae1f-9a5aa877a8e3)
+---
+## Add Group (showing **assets**)
+![image](https://github.com/user-attachments/assets/9d89a2d1-8e42-4728-8097-c9f67559087e)
+---
+## Add Group (showing **users**)
+![image](https://github.com/user-attachments/assets/3c27a9af-993f-48f7-a94d-b032b74b692a)
 
 ## Features
 
